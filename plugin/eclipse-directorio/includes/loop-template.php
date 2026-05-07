@@ -51,12 +51,6 @@ function ed_get_or_create_loop_template() {
     return $id;
 }
 
-function ed_dynamic_tag( $name, $settings = array() ) {
-    $id      = ed_el_id();
-    $encoded = base64_encode( wp_json_encode( $settings ) );
-    return '[elementor-tag id="' . $id . '" name="' . $name . '" settings="' . $encoded . '"]';
-}
-
 function ed_build_loop_item_data() {
     return array(
         ed_section(
@@ -69,94 +63,64 @@ function ed_build_loop_item_data() {
             array(
                 ed_column( 100, array(
 
-                    // Featured image with dynamic tag
                     ed_widget( 'image', array(
-                        'image'      => array( 'url' => '', 'id' => '' ),
-                        'image_size' => 'medium_large',
-                        '__dynamic__' => array(
-                            'image' => ed_dynamic_tag( 'post-featured-image' ),
-                        ),
-                        '_margin'    => ed_px( 0 ),
-                        '_padding'   => ed_px( 0 ),
-                        'width'      => ed_size( 100, '%' ),
+                        'image'       => array( 'url' => 'https://placehold.co/600x400/4A3A2A/C8A96E?text=Imagen', 'id' => '' ),
+                        'image_size'  => 'medium_large',
+                        '_margin'     => ed_px( 0 ),
+                        '_padding'    => ed_px( 0 ),
+                        'width'       => ed_size( 100, '%' ),
                         'css_classes' => 'ed-loop-card-img',
                     ) ),
 
-                    // Provider name (ACF nombre_negocio with post-title fallback)
                     ed_widget( 'heading', array(
-                        'title'       => '',
-                        'header_size' => 'h3',
-                        '__dynamic__' => array(
-                            'title' => ed_dynamic_tag( 'post-title' ),
-                        ),
-                        'title_color'                 => '#2D2D2D',
-                        'typography_typography'        => 'custom',
-                        'typography_font_family'       => 'Playfair Display',
-                        'typography_font_size'         => ed_size( 20 ),
-                        'typography_font_weight'       => '500',
-                        'typography_line_height'       => ed_size( 1.3, 'em' ),
-                        '_margin'                      => ed_px( 20, 20, 8, 20 ),
+                        'title'                        => 'Nombre del proveedor',
+                        'header_size'                  => 'h3',
+                        'title_color'                  => '#2D2D2D',
+                        'typography_typography'         => 'custom',
+                        'typography_font_family'        => 'Playfair Display',
+                        'typography_font_size'          => ed_size( 20 ),
+                        'typography_font_weight'        => '500',
+                        'typography_line_height'        => ed_size( 1.3, 'em' ),
+                        '_margin'                       => ed_px( 20, 20, 8, 20 ),
                     ) ),
 
-                    // Category term
                     ed_widget( 'text-editor', array(
-                        'editor' => '',
-                        '__dynamic__' => array(
-                            'editor' => ed_dynamic_tag( 'post-terms', array(
-                                'taxonomy'  => 'categoria_servicio',
-                                'separator' => ' · ',
-                            ) ),
-                        ),
-                        'text_color'                  => '#C8A96E',
-                        'typography_typography'        => 'custom',
-                        'typography_font_family'       => 'DM Sans',
-                        'typography_font_size'         => ed_size( 12 ),
-                        'typography_font_weight'       => '500',
-                        'typography_letter_spacing'    => ed_size( 1 ),
-                        'typography_text_transform'    => 'uppercase',
-                        '_margin'                      => ed_px( 0, 20, 8, 20 ),
+                        'editor'                       => '<p>CATEGOR&Iacute;A</p>',
+                        'text_color'                   => '#C8A96E',
+                        'typography_typography'         => 'custom',
+                        'typography_font_family'        => 'DM Sans',
+                        'typography_font_size'          => ed_size( 12 ),
+                        'typography_font_weight'        => '500',
+                        'typography_letter_spacing'     => ed_size( 1 ),
+                        'typography_text_transform'     => 'uppercase',
+                        '_margin'                       => ed_px( 0, 20, 8, 20 ),
                     ) ),
 
-                    // Zone term
                     ed_widget( 'text-editor', array(
-                        'editor' => '',
-                        '__dynamic__' => array(
-                            'editor' => ed_dynamic_tag( 'post-terms', array(
-                                'taxonomy'  => 'zona_servicio',
-                                'separator' => ', ',
-                            ) ),
-                        ),
-                        'text_color'                  => '#999999',
-                        'typography_typography'        => 'custom',
-                        'typography_font_family'       => 'DM Sans',
-                        'typography_font_size'         => ed_size( 13 ),
-                        'typography_font_weight'       => '300',
-                        '_margin'                      => ed_px( 0, 20, 12, 20 ),
+                        'editor'                       => '<p><i class="fa-solid fa-location-dot" style="opacity:0.5;font-size:11px;margin-right:4px;"></i>Zona / Ciudad</p>',
+                        'text_color'                   => '#999999',
+                        'typography_typography'         => 'custom',
+                        'typography_font_family'        => 'DM Sans',
+                        'typography_font_size'          => ed_size( 13 ),
+                        'typography_font_weight'        => '300',
+                        '_margin'                       => ed_px( 0, 20, 12, 20 ),
                     ) ),
 
-                    // Short description (ACF descripcion_corta)
                     ed_widget( 'text-editor', array(
-                        'editor' => '',
-                        '__dynamic__' => array(
-                            'editor' => ed_dynamic_tag( 'post-excerpt' ),
-                        ),
-                        'text_color'                  => '#6B6B6B',
-                        'typography_typography'        => 'custom',
-                        'typography_font_family'       => 'DM Sans',
-                        'typography_font_size'         => ed_size( 14 ),
-                        'typography_font_weight'       => '300',
-                        'typography_line_height'       => ed_size( 1.7, 'em' ),
-                        '_margin'                      => ed_px( 0, 20, 20, 20 ),
+                        'editor'                       => '<p>Breve descripci&oacute;n del proveedor y sus servicios principales para eventos en Sevilla.</p>',
+                        'text_color'                   => '#6B6B6B',
+                        'typography_typography'         => 'custom',
+                        'typography_font_family'        => 'DM Sans',
+                        'typography_font_size'          => ed_size( 14 ),
+                        'typography_font_weight'        => '300',
+                        'typography_line_height'        => ed_size( 1.7, 'em' ),
+                        '_margin'                       => ed_px( 0, 20, 20, 20 ),
                     ) ),
 
-                    // Ver perfil button
                     ed_widget( 'button', array(
-                        'text'  => 'Ver perfil',
-                        'align' => 'stretch',
-                        'link'  => array( 'url' => '' ),
-                        '__dynamic__' => array(
-                            'link' => ed_dynamic_tag( 'post-url' ),
-                        ),
+                        'text'                           => 'Ver perfil',
+                        'align'                          => 'stretch',
+                        'link'                           => array( 'url' => '#', 'is_external' => '', 'nofollow' => '' ),
                         'button_type'                    => 'default',
                         'background_color'               => 'transparent',
                         'button_text_color'              => '#2D2D2D',

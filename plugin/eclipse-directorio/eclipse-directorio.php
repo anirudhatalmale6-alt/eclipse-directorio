@@ -42,6 +42,7 @@ require_once ED_PLUGIN_DIR . 'includes/elementor-builder.php';
 require_once ED_PLUGIN_DIR . 'includes/loop-template.php';
 require_once ED_PLUGIN_DIR . 'includes/archive-template.php';
 require_once ED_PLUGIN_DIR . 'includes/single-template.php';
+require_once ED_PLUGIN_DIR . 'includes/sample-data.php';
 
 /**
  * Enqueue plugin styles and fonts on the frontend.
