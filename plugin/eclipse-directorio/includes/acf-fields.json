@@ -1,0 +1,1162 @@
+[
+    {
+        "key": "group_ed_common_fields",
+        "title": "Datos Comunes del Proveedor",
+        "fields": [
+            {
+                "key": "field_ed_nombre_negocio",
+                "label": "Nombre del Negocio",
+                "name": "nombre_negocio",
+                "type": "text"
+            },
+            {
+                "key": "field_ed_titulo_profesional",
+                "label": "Título Profesional",
+                "name": "titulo_profesional",
+                "type": "text"
+            },
+            {
+                "key": "field_ed_logo",
+                "label": "Logo",
+                "name": "logo",
+                "type": "image",
+                "return_format": "url",
+                "preview_size": "medium"
+            },
+            {
+                "key": "field_ed_galeria_fotos",
+                "label": "Galería de Fotos",
+                "name": "galeria_fotos",
+                "type": "gallery",
+                "return_format": "url",
+                "preview_size": "medium"
+            },
+            {
+                "key": "field_ed_telefono_1",
+                "label": "Teléfono Principal",
+                "name": "telefono_1",
+                "type": "text"
+            },
+            {
+                "key": "field_ed_telefono_2",
+                "label": "Teléfono Secundario",
+                "name": "telefono_2",
+                "type": "text"
+            },
+            {
+                "key": "field_ed_email",
+                "label": "Email de Contacto",
+                "name": "email",
+                "type": "email"
+            },
+            {
+                "key": "field_ed_whatsapp",
+                "label": "WhatsApp",
+                "name": "whatsapp",
+                "type": "text"
+            },
+            {
+                "key": "field_ed_sitio_web",
+                "label": "Sitio Web",
+                "name": "sitio_web",
+                "type": "url"
+            },
+            {
+                "key": "field_ed_instagram",
+                "label": "Instagram",
+                "name": "instagram",
+                "type": "url"
+            },
+            {
+                "key": "field_ed_facebook",
+                "label": "Facebook",
+                "name": "facebook",
+                "type": "url"
+            },
+            {
+                "key": "field_ed_tiktok",
+                "label": "TikTok",
+                "name": "tiktok",
+                "type": "url"
+            },
+            {
+                "key": "field_ed_youtube",
+                "label": "YouTube",
+                "name": "youtube",
+                "type": "url"
+            },
+            {
+                "key": "field_ed_linkedin",
+                "label": "LinkedIn",
+                "name": "linkedin",
+                "type": "url"
+            },
+            {
+                "key": "field_ed_direccion",
+                "label": "Dirección Completa",
+                "name": "direccion",
+                "type": "text"
+            },
+            {
+                "key": "field_ed_codigo_postal",
+                "label": "Código Postal",
+                "name": "codigo_postal",
+                "type": "text"
+            },
+            {
+                "key": "field_ed_descripcion_corta",
+                "label": "Descripción Corta",
+                "name": "descripcion_corta",
+                "type": "textarea",
+                "rows": 3
+            },
+            {
+                "key": "field_ed_rango_precio_min",
+                "label": "Precio Desde (€)",
+                "name": "rango_precio_min",
+                "type": "number"
+            },
+            {
+                "key": "field_ed_rango_precio_max",
+                "label": "Precio Hasta (€)",
+                "name": "rango_precio_max",
+                "type": "number"
+            },
+            {
+                "key": "field_ed_horario",
+                "label": "Horario de Atención",
+                "name": "horario",
+                "type": "repeater",
+                "layout": "table",
+                "min": 0,
+                "max": 7,
+                "sub_fields": [
+                    {
+                        "key": "field_ed_horario_dia",
+                        "label": "Día",
+                        "name": "dia",
+                        "type": "select",
+                        "choices": {
+                            "Lunes": "Lunes",
+                            "Martes": "Martes",
+                            "Miércoles": "Miércoles",
+                            "Jueves": "Jueves",
+                            "Viernes": "Viernes",
+                            "Sábado": "Sábado",
+                            "Domingo": "Domingo"
+                        }
+                    },
+                    {
+                        "key": "field_ed_horario_apertura",
+                        "label": "Hora Apertura",
+                        "name": "hora_apertura",
+                        "type": "text"
+                    },
+                    {
+                        "key": "field_ed_horario_cierre",
+                        "label": "Hora Cierre",
+                        "name": "hora_cierre",
+                        "type": "text"
+                    },
+                    {
+                        "key": "field_ed_horario_cerrado",
+                        "label": "Cerrado",
+                        "name": "cerrado",
+                        "type": "true_false",
+                        "ui": 1
+                    }
+                ]
+            },
+            {
+                "key": "field_ed_verificado",
+                "label": "Proveedor Verificado",
+                "name": "verificado",
+                "type": "true_false",
+                "ui": 1
+            },
+            {
+                "key": "field_ed_destacado",
+                "label": "Proveedor Destacado",
+                "name": "destacado",
+                "type": "true_false",
+                "ui": 1
+            }
+        ],
+        "location": [
+            [
+                {
+                    "param": "post_type",
+                    "operator": "==",
+                    "value": "proveedor"
+                }
+            ]
+        ],
+        "menu_order": 0,
+        "position": "normal",
+        "style": "default",
+        "label_placement": "top",
+        "instruction_placement": "label",
+        "active": true
+    },
+    {
+        "key": "group_ed_espacios_fields",
+        "title": "Campos Espacios",
+        "fields": [
+            {
+                "key": "field_ed_esp_capacidad_maxima",
+                "label": "Capacidad Máxima de Personas",
+                "name": "esp_capacidad_maxima",
+                "type": "number"
+            },
+            {
+                "key": "field_ed_esp_metros_cuadrados",
+                "label": "Metros Cuadrados",
+                "name": "esp_metros_cuadrados",
+                "type": "number"
+            },
+            {
+                "key": "field_ed_esp_tipo_espacio",
+                "label": "Tipo de Espacio",
+                "name": "esp_tipo_espacio",
+                "type": "select",
+                "choices": {
+                    "Interior": "Interior",
+                    "Exterior": "Exterior",
+                    "Mixto": "Mixto"
+                }
+            },
+            {
+                "key": "field_ed_esp_aparcamiento",
+                "label": "Aparcamiento Disponible",
+                "name": "esp_aparcamiento",
+                "type": "true_false",
+                "ui": 1
+            },
+            {
+                "key": "field_ed_esp_plazas_parking",
+                "label": "Plazas de Aparcamiento",
+                "name": "esp_plazas_parking",
+                "type": "number",
+                "conditional_logic": [
+                    [
+                        {
+                            "field": "field_ed_esp_aparcamiento",
+                            "operator": "==",
+                            "value": "1"
+                        }
+                    ]
+                ]
+            },
+            {
+                "key": "field_ed_esp_accesibilidad",
+                "label": "Accesibilidad (Adaptado Discapacidad)",
+                "name": "esp_accesibilidad",
+                "type": "true_false",
+                "ui": 1
+            },
+            {
+                "key": "field_ed_esp_catering_propio",
+                "label": "Catering Propio",
+                "name": "esp_catering_propio",
+                "type": "true_false",
+                "ui": 1
+            },
+            {
+                "key": "field_ed_esp_servicios_incluidos",
+                "label": "Servicios Incluidos",
+                "name": "esp_servicios_incluidos",
+                "type": "checkbox",
+                "choices": {
+                    "Cocina propia": "Cocina propia",
+                    "DJ y música": "DJ y música",
+                    "Decoración": "Decoración",
+                    "Iluminación": "Iluminación",
+                    "Coordinación": "Coordinación",
+                    "Barra libre": "Barra libre",
+                    "Photocall": "Photocall",
+                    "Parking": "Parking",
+                    "Wi-Fi": "Wi-Fi",
+                    "Alojamiento": "Alojamiento"
+                }
+            },
+            {
+                "key": "field_ed_esp_tipo_eventos",
+                "label": "Tipos de Eventos",
+                "name": "esp_tipo_eventos",
+                "type": "checkbox",
+                "choices": {
+                    "Bodas": "Bodas",
+                    "Bautizos": "Bautizos",
+                    "Comuniones": "Comuniones",
+                    "Eventos corporativos": "Eventos corporativos",
+                    "Fiestas privadas": "Fiestas privadas",
+                    "Conferencias": "Conferencias",
+                    "Graduaciones": "Graduaciones"
+                }
+            }
+        ],
+        "location": [
+            [
+                {
+                    "param": "post_type",
+                    "operator": "==",
+                    "value": "proveedor"
+                },
+                {
+                    "param": "post_taxonomy",
+                    "operator": "==",
+                    "value": "categoria_servicio:espacios"
+                }
+            ]
+        ],
+        "menu_order": 10,
+        "position": "normal",
+        "style": "default",
+        "label_placement": "top",
+        "instruction_placement": "label",
+        "active": true
+    },
+    {
+        "key": "group_ed_catering_fields",
+        "title": "Campos Catering",
+        "fields": [
+            {
+                "key": "field_ed_cat_tipo_cocina",
+                "label": "Tipo de Cocina",
+                "name": "cat_tipo_cocina",
+                "type": "checkbox",
+                "choices": {
+                    "Mediterránea": "Mediterránea",
+                    "Fusión": "Fusión",
+                    "Internacional": "Internacional",
+                    "Andaluza": "Andaluza",
+                    "Vegana/Vegetariana": "Vegana/Vegetariana",
+                    "Asiática": "Asiática",
+                    "Italiana": "Italiana"
+                }
+            },
+            {
+                "key": "field_ed_cat_precio_persona",
+                "label": "Precio por Persona Desde (€)",
+                "name": "cat_precio_persona",
+                "type": "number"
+            },
+            {
+                "key": "field_ed_cat_minimo_comensales",
+                "label": "Mínimo de Comensales",
+                "name": "cat_minimo_comensales",
+                "type": "number"
+            },
+            {
+                "key": "field_ed_cat_menu_degustacion",
+                "label": "Menú Degustación Disponible",
+                "name": "cat_menu_degustacion",
+                "type": "true_false",
+                "ui": 1
+            },
+            {
+                "key": "field_ed_cat_servicio_camareros",
+                "label": "Servicio de Camareros",
+                "name": "cat_servicio_camareros",
+                "type": "true_false",
+                "ui": 1
+            },
+            {
+                "key": "field_ed_cat_vajilla_incluida",
+                "label": "Vajilla y Menaje Incluido",
+                "name": "cat_vajilla_incluida",
+                "type": "true_false",
+                "ui": 1
+            },
+            {
+                "key": "field_ed_cat_zona_desplazamiento",
+                "label": "Zona de Desplazamiento",
+                "name": "cat_zona_desplazamiento",
+                "type": "text"
+            },
+            {
+                "key": "field_ed_cat_alergenos",
+                "label": "Opciones para Alérgenos",
+                "name": "cat_alergenos",
+                "type": "checkbox",
+                "choices": {
+                    "Gluten": "Gluten",
+                    "Lactosa": "Lactosa",
+                    "Frutos secos": "Frutos secos",
+                    "Mariscos": "Mariscos",
+                    "Huevo": "Huevo",
+                    "Soja": "Soja",
+                    "Celíaco": "Celíaco"
+                }
+            }
+        ],
+        "location": [
+            [
+                {
+                    "param": "post_type",
+                    "operator": "==",
+                    "value": "proveedor"
+                },
+                {
+                    "param": "post_taxonomy",
+                    "operator": "==",
+                    "value": "categoria_servicio:catering"
+                }
+            ]
+        ],
+        "menu_order": 20,
+        "position": "normal",
+        "style": "default",
+        "label_placement": "top",
+        "instruction_placement": "label",
+        "active": true
+    },
+    {
+        "key": "group_ed_restaurantes_fields",
+        "title": "Campos Restaurantes",
+        "fields": [
+            {
+                "key": "field_ed_rest_tipo_cocina",
+                "label": "Tipo de Cocina",
+                "name": "rest_tipo_cocina",
+                "type": "checkbox",
+                "choices": {
+                    "Mediterránea": "Mediterránea",
+                    "Andaluza": "Andaluza",
+                    "Fusión": "Fusión",
+                    "Internacional": "Internacional",
+                    "Italiana": "Italiana",
+                    "Japonesa": "Japonesa",
+                    "Tapas": "Tapas"
+                }
+            },
+            {
+                "key": "field_ed_rest_capacidad_local",
+                "label": "Capacidad del Local",
+                "name": "rest_capacidad_local",
+                "type": "number"
+            },
+            {
+                "key": "field_ed_rest_salon_privado",
+                "label": "Salón Privado",
+                "name": "rest_salon_privado",
+                "type": "true_false",
+                "ui": 1
+            },
+            {
+                "key": "field_ed_rest_capacidad_salon",
+                "label": "Capacidad del Salón Privado",
+                "name": "rest_capacidad_salon",
+                "type": "number",
+                "conditional_logic": [
+                    [
+                        {
+                            "field": "field_ed_rest_salon_privado",
+                            "operator": "==",
+                            "value": "1"
+                        }
+                    ]
+                ]
+            },
+            {
+                "key": "field_ed_rest_terraza",
+                "label": "Terraza",
+                "name": "rest_terraza",
+                "type": "true_false",
+                "ui": 1
+            },
+            {
+                "key": "field_ed_rest_menu_grupos",
+                "label": "Menú de Grupos/Eventos",
+                "name": "rest_menu_grupos",
+                "type": "true_false",
+                "ui": 1
+            },
+            {
+                "key": "field_ed_rest_precio_medio",
+                "label": "Precio Medio por Persona (€)",
+                "name": "rest_precio_medio",
+                "type": "number"
+            },
+            {
+                "key": "field_ed_rest_carta_vinos",
+                "label": "Carta de Vinos",
+                "name": "rest_carta_vinos",
+                "type": "true_false",
+                "ui": 1
+            },
+            {
+                "key": "field_ed_rest_aparcamiento",
+                "label": "Aparcamiento",
+                "name": "rest_aparcamiento",
+                "type": "true_false",
+                "ui": 1
+            }
+        ],
+        "location": [
+            [
+                {
+                    "param": "post_type",
+                    "operator": "==",
+                    "value": "proveedor"
+                },
+                {
+                    "param": "post_taxonomy",
+                    "operator": "==",
+                    "value": "categoria_servicio:restaurantes"
+                }
+            ]
+        ],
+        "menu_order": 30,
+        "position": "normal",
+        "style": "default",
+        "label_placement": "top",
+        "instruction_placement": "label",
+        "active": true
+    },
+    {
+        "key": "group_ed_belleza_fields",
+        "title": "Campos Centros de Belleza",
+        "fields": [
+            {
+                "key": "field_ed_bell_servicios",
+                "label": "Servicios Ofrecidos",
+                "name": "bell_servicios",
+                "type": "checkbox",
+                "choices": {
+                    "Maquillaje": "Maquillaje",
+                    "Peinado": "Peinado",
+                    "Manicura": "Manicura",
+                    "Pedicura": "Pedicura",
+                    "Tratamientos faciales": "Tratamientos faciales",
+                    "Masajes": "Masajes",
+                    "Depilación láser": "Depilación láser",
+                    "Extensiones de pestañas": "Extensiones de pestañas",
+                    "Microblading": "Microblading"
+                }
+            },
+            {
+                "key": "field_ed_bell_domicilio",
+                "label": "Servicio a Domicilio",
+                "name": "bell_domicilio",
+                "type": "true_false",
+                "ui": 1
+            },
+            {
+                "key": "field_ed_bell_pack_novias",
+                "label": "Pack Novias",
+                "name": "bell_pack_novias",
+                "type": "true_false",
+                "ui": 1
+            },
+            {
+                "key": "field_ed_bell_marcas",
+                "label": "Productos/Marcas que Trabajan",
+                "name": "bell_marcas",
+                "type": "textarea",
+                "rows": 2
+            },
+            {
+                "key": "field_ed_bell_num_profesionales",
+                "label": "Número de Profesionales",
+                "name": "bell_num_profesionales",
+                "type": "number"
+            }
+        ],
+        "location": [
+            [
+                {
+                    "param": "post_type",
+                    "operator": "==",
+                    "value": "proveedor"
+                },
+                {
+                    "param": "post_taxonomy",
+                    "operator": "==",
+                    "value": "categoria_servicio:centros-de-belleza"
+                }
+            ]
+        ],
+        "menu_order": 40,
+        "position": "normal",
+        "style": "default",
+        "label_placement": "top",
+        "instruction_placement": "label",
+        "active": true
+    },
+    {
+        "key": "group_ed_animacion_fields",
+        "title": "Campos Animación",
+        "fields": [
+            {
+                "key": "field_ed_anim_tipo_espectaculo",
+                "label": "Tipo de Espectáculo",
+                "name": "anim_tipo_espectaculo",
+                "type": "checkbox",
+                "choices": {
+                    "Magia": "Magia",
+                    "Payasos": "Payasos",
+                    "DJ": "DJ",
+                    "Photocall": "Photocall",
+                    "Karaoke": "Karaoke",
+                    "Hinchables": "Hinchables",
+                    "Pintacaras": "Pintacaras",
+                    "Globoflexia": "Globoflexia",
+                    "Shows temáticos": "Shows temáticos",
+                    "Team building": "Team building"
+                }
+            },
+            {
+                "key": "field_ed_anim_duracion",
+                "label": "Duración del Show",
+                "name": "anim_duracion",
+                "type": "text"
+            },
+            {
+                "key": "field_ed_anim_rango_edad",
+                "label": "Rango de Edad del Público",
+                "name": "anim_rango_edad",
+                "type": "select",
+                "choices": {
+                    "Infantil (0-6 años)": "Infantil (0-6 años)",
+                    "Infantil (6-12 años)": "Infantil (6-12 años)",
+                    "Adolescentes": "Adolescentes",
+                    "Adultos": "Adultos",
+                    "Todas las edades": "Todas las edades"
+                }
+            },
+            {
+                "key": "field_ed_anim_material_incluido",
+                "label": "Incluye Material/Equipo",
+                "name": "anim_material_incluido",
+                "type": "true_false",
+                "ui": 1
+            },
+            {
+                "key": "field_ed_anim_num_animadores",
+                "label": "Número de Animadores",
+                "name": "anim_num_animadores",
+                "type": "number"
+            },
+            {
+                "key": "field_ed_anim_desplazamiento",
+                "label": "Zona de Desplazamiento",
+                "name": "anim_desplazamiento",
+                "type": "text"
+            }
+        ],
+        "location": [
+            [
+                {
+                    "param": "post_type",
+                    "operator": "==",
+                    "value": "proveedor"
+                },
+                {
+                    "param": "post_taxonomy",
+                    "operator": "==",
+                    "value": "categoria_servicio:animacion"
+                }
+            ]
+        ],
+        "menu_order": 50,
+        "position": "normal",
+        "style": "default",
+        "label_placement": "top",
+        "instruction_placement": "label",
+        "active": true
+    },
+    {
+        "key": "group_ed_musicales_fields",
+        "title": "Campos Grupos Musicales",
+        "fields": [
+            {
+                "key": "field_ed_mus_genero",
+                "label": "Género Musical",
+                "name": "mus_genero",
+                "type": "checkbox",
+                "choices": {
+                    "Pop/Rock": "Pop/Rock",
+                    "Flamenco": "Flamenco",
+                    "Jazz": "Jazz",
+                    "Clásica": "Clásica",
+                    "Latin": "Latin",
+                    "Covers": "Covers",
+                    "DJ": "DJ",
+                    "Chill-out": "Chill-out",
+                    "Sevillanas": "Sevillanas"
+                }
+            },
+            {
+                "key": "field_ed_mus_integrantes",
+                "label": "Número de Integrantes",
+                "name": "mus_integrantes",
+                "type": "number"
+            },
+            {
+                "key": "field_ed_mus_repertorio",
+                "label": "Repertorio (Documento)",
+                "name": "mus_repertorio",
+                "type": "file",
+                "return_format": "url"
+            },
+            {
+                "key": "field_ed_mus_equipo_propio",
+                "label": "Equipamiento Propio",
+                "name": "mus_equipo_propio",
+                "type": "true_false",
+                "ui": 1
+            },
+            {
+                "key": "field_ed_mus_duracion",
+                "label": "Duración de Actuación",
+                "name": "mus_duracion",
+                "type": "text"
+            },
+            {
+                "key": "field_ed_mus_video_demo",
+                "label": "Vídeo Demo (YouTube/Vimeo)",
+                "name": "mus_video_demo",
+                "type": "url"
+            },
+            {
+                "key": "field_ed_mus_rider",
+                "label": "Rider Técnico",
+                "name": "mus_rider",
+                "type": "file",
+                "return_format": "url"
+            }
+        ],
+        "location": [
+            [
+                {
+                    "param": "post_type",
+                    "operator": "==",
+                    "value": "proveedor"
+                },
+                {
+                    "param": "post_taxonomy",
+                    "operator": "==",
+                    "value": "categoria_servicio:grupos-musicales"
+                }
+            ]
+        ],
+        "menu_order": 60,
+        "position": "normal",
+        "style": "default",
+        "label_placement": "top",
+        "instruction_placement": "label",
+        "active": true
+    },
+    {
+        "key": "group_ed_ambientacion_fields",
+        "title": "Campos Ambientación",
+        "fields": [
+            {
+                "key": "field_ed_amb_tipo_decoracion",
+                "label": "Tipo de Decoración",
+                "name": "amb_tipo_decoracion",
+                "type": "checkbox",
+                "choices": {
+                    "Globos": "Globos",
+                    "Flores": "Flores",
+                    "Telas": "Telas",
+                    "Iluminación": "Iluminación",
+                    "Mobiliario": "Mobiliario",
+                    "Centros de mesa": "Centros de mesa",
+                    "Arcos": "Arcos",
+                    "Photocall": "Photocall"
+                }
+            },
+            {
+                "key": "field_ed_amb_estilo",
+                "label": "Estilo",
+                "name": "amb_estilo",
+                "type": "checkbox",
+                "choices": {
+                    "Clásico": "Clásico",
+                    "Moderno": "Moderno",
+                    "Rústico": "Rústico",
+                    "Bohemio": "Bohemio",
+                    "Minimalista": "Minimalista",
+                    "Romántico": "Romántico",
+                    "Vintage": "Vintage"
+                }
+            },
+            {
+                "key": "field_ed_amb_montaje",
+                "label": "Servicio de Montaje y Desmontaje",
+                "name": "amb_montaje",
+                "type": "true_false",
+                "ui": 1
+            },
+            {
+                "key": "field_ed_amb_alquiler_mobiliario",
+                "label": "Alquiler de Mobiliario",
+                "name": "amb_alquiler_mobiliario",
+                "type": "true_false",
+                "ui": 1
+            },
+            {
+                "key": "field_ed_amb_personalizacion",
+                "label": "Personalización",
+                "name": "amb_personalizacion",
+                "type": "true_false",
+                "ui": 1
+            },
+            {
+                "key": "field_ed_amb_plazo_minimo",
+                "label": "Plazo Mínimo de Encargo",
+                "name": "amb_plazo_minimo",
+                "type": "text"
+            }
+        ],
+        "location": [
+            [
+                {
+                    "param": "post_type",
+                    "operator": "==",
+                    "value": "proveedor"
+                },
+                {
+                    "param": "post_taxonomy",
+                    "operator": "==",
+                    "value": "categoria_servicio:ambientacion"
+                }
+            ]
+        ],
+        "menu_order": 70,
+        "position": "normal",
+        "style": "default",
+        "label_placement": "top",
+        "instruction_placement": "label",
+        "active": true
+    },
+    {
+        "key": "group_ed_audiovisuales_fields",
+        "title": "Campos Servicios Audiovisuales",
+        "fields": [
+            {
+                "key": "field_ed_aud_servicios",
+                "label": "Servicios",
+                "name": "aud_servicios",
+                "type": "checkbox",
+                "choices": {
+                    "Sonido": "Sonido",
+                    "Iluminación": "Iluminación",
+                    "Pantallas LED": "Pantallas LED",
+                    "Proyección": "Proyección",
+                    "Streaming": "Streaming",
+                    "Traducción simultánea": "Traducción simultánea",
+                    "Microfonía": "Microfonía"
+                }
+            },
+            {
+                "key": "field_ed_aud_cobertura",
+                "label": "Cobertura Geográfica",
+                "name": "aud_cobertura",
+                "type": "text"
+            },
+            {
+                "key": "field_ed_aud_equipo_propio",
+                "label": "Equipamiento Propio",
+                "name": "aud_equipo_propio",
+                "type": "true_false",
+                "ui": 1
+            },
+            {
+                "key": "field_ed_aud_montaje_incluido",
+                "label": "Montaje Incluido",
+                "name": "aud_montaje_incluido",
+                "type": "true_false",
+                "ui": 1
+            },
+            {
+                "key": "field_ed_aud_tecnico_incluido",
+                "label": "Técnico Incluido",
+                "name": "aud_tecnico_incluido",
+                "type": "true_false",
+                "ui": 1
+            },
+            {
+                "key": "field_ed_aud_tiempo_respuesta",
+                "label": "Tiempo de Respuesta Mínimo",
+                "name": "aud_tiempo_respuesta",
+                "type": "text"
+            }
+        ],
+        "location": [
+            [
+                {
+                    "param": "post_type",
+                    "operator": "==",
+                    "value": "proveedor"
+                },
+                {
+                    "param": "post_taxonomy",
+                    "operator": "==",
+                    "value": "categoria_servicio:servicios-audiovisuales"
+                }
+            ]
+        ],
+        "menu_order": 80,
+        "position": "normal",
+        "style": "default",
+        "label_placement": "top",
+        "instruction_placement": "label",
+        "active": true
+    },
+    {
+        "key": "group_ed_transportes_fields",
+        "title": "Campos Transportes",
+        "fields": [
+            {
+                "key": "field_ed_trans_tipo_vehiculo",
+                "label": "Tipo de Vehículo",
+                "name": "trans_tipo_vehiculo",
+                "type": "checkbox",
+                "choices": {
+                    "Limusina": "Limusina",
+                    "Autobús": "Autobús",
+                    "Coche clásico": "Coche clásico",
+                    "Furgoneta": "Furgoneta",
+                    "Caballo y carruaje": "Caballo y carruaje",
+                    "Descapotable": "Descapotable",
+                    "Minibús": "Minibús"
+                }
+            },
+            {
+                "key": "field_ed_trans_capacidad",
+                "label": "Capacidad de Pasajeros",
+                "name": "trans_capacidad",
+                "type": "number"
+            },
+            {
+                "key": "field_ed_trans_cobertura",
+                "label": "Cobertura Geográfica",
+                "name": "trans_cobertura",
+                "type": "text"
+            },
+            {
+                "key": "field_ed_trans_conductor",
+                "label": "Conductor Incluido",
+                "name": "trans_conductor",
+                "type": "true_false",
+                "ui": 1
+            },
+            {
+                "key": "field_ed_trans_decoracion",
+                "label": "Decoración del Vehículo",
+                "name": "trans_decoracion",
+                "type": "true_false",
+                "ui": 1
+            },
+            {
+                "key": "field_ed_trans_duracion_minima",
+                "label": "Duración Mínima del Servicio",
+                "name": "trans_duracion_minima",
+                "type": "text"
+            }
+        ],
+        "location": [
+            [
+                {
+                    "param": "post_type",
+                    "operator": "==",
+                    "value": "proveedor"
+                },
+                {
+                    "param": "post_taxonomy",
+                    "operator": "==",
+                    "value": "categoria_servicio:transportes"
+                }
+            ]
+        ],
+        "menu_order": 90,
+        "position": "normal",
+        "style": "default",
+        "label_placement": "top",
+        "instruction_placement": "label",
+        "active": true
+    },
+    {
+        "key": "group_ed_fotovideo_fields",
+        "title": "Campos Fotografía y Vídeo",
+        "fields": [
+            {
+                "key": "field_ed_foto_servicios",
+                "label": "Servicios",
+                "name": "foto_servicios",
+                "type": "checkbox",
+                "choices": {
+                    "Fotografía": "Fotografía",
+                    "Vídeo": "Vídeo",
+                    "Drone": "Drone",
+                    "Photocall": "Photocall",
+                    "Álbum": "Álbum",
+                    "Fotomatón": "Fotomatón",
+                    "Postproducción": "Postproducción"
+                }
+            },
+            {
+                "key": "field_ed_foto_estilo",
+                "label": "Estilo",
+                "name": "foto_estilo",
+                "type": "checkbox",
+                "choices": {
+                    "Reportaje": "Reportaje",
+                    "Artístico": "Artístico",
+                    "Documental": "Documental",
+                    "Cinematográfico": "Cinematográfico",
+                    "Natural": "Natural",
+                    "Clásico": "Clásico"
+                }
+            },
+            {
+                "key": "field_ed_foto_horas_cobertura",
+                "label": "Horas de Cobertura",
+                "name": "foto_horas_cobertura",
+                "type": "number"
+            },
+            {
+                "key": "field_ed_foto_entregables",
+                "label": "Entregables",
+                "name": "foto_entregables",
+                "type": "checkbox",
+                "choices": {
+                    "Fotos editadas": "Fotos editadas",
+                    "Vídeo corto (highlights)": "Vídeo corto (highlights)",
+                    "Vídeo largo": "Vídeo largo",
+                    "Álbum impreso": "Álbum impreso",
+                    "Galería online": "Galería online",
+                    "USB": "USB"
+                }
+            },
+            {
+                "key": "field_ed_foto_plazo_entrega",
+                "label": "Plazo de Entrega",
+                "name": "foto_plazo_entrega",
+                "type": "text"
+            },
+            {
+                "key": "field_ed_foto_segundo_fotografo",
+                "label": "Segundo Fotógrafo",
+                "name": "foto_segundo_fotografo",
+                "type": "true_false",
+                "ui": 1
+            },
+            {
+                "key": "field_ed_foto_portfolio_url",
+                "label": "Portfolio / Vídeo Demo",
+                "name": "foto_portfolio_url",
+                "type": "url"
+            }
+        ],
+        "location": [
+            [
+                {
+                    "param": "post_type",
+                    "operator": "==",
+                    "value": "proveedor"
+                },
+                {
+                    "param": "post_taxonomy",
+                    "operator": "==",
+                    "value": "categoria_servicio:fotografia-y-video"
+                }
+            ]
+        ],
+        "menu_order": 100,
+        "position": "normal",
+        "style": "default",
+        "label_placement": "top",
+        "instruction_placement": "label",
+        "active": true
+    },
+    {
+        "key": "group_ed_alojamiento_fields",
+        "title": "Campos Alojamiento",
+        "fields": [
+            {
+                "key": "field_ed_aloj_num_habitaciones",
+                "label": "Número de Habitaciones",
+                "name": "aloj_num_habitaciones",
+                "type": "number"
+            },
+            {
+                "key": "field_ed_aloj_capacidad_huespedes",
+                "label": "Capacidad Total de Huéspedes",
+                "name": "aloj_capacidad_huespedes",
+                "type": "number"
+            },
+            {
+                "key": "field_ed_aloj_precio_noche",
+                "label": "Precio por Noche Desde (€)",
+                "name": "aloj_precio_noche",
+                "type": "number"
+            },
+            {
+                "key": "field_ed_aloj_servicios",
+                "label": "Servicios",
+                "name": "aloj_servicios",
+                "type": "checkbox",
+                "choices": {
+                    "Wi-Fi": "Wi-Fi",
+                    "Parking": "Parking",
+                    "Piscina": "Piscina",
+                    "Desayuno incluido": "Desayuno incluido",
+                    "Admite mascotas": "Admite mascotas",
+                    "Aire acondicionado": "Aire acondicionado",
+                    "Cocina": "Cocina",
+                    "Terraza": "Terraza",
+                    "Jardín": "Jardín"
+                }
+            },
+            {
+                "key": "field_ed_aloj_distancia_centro",
+                "label": "Distancia al Centro / Zona de Eventos",
+                "name": "aloj_distancia_centro",
+                "type": "text"
+            },
+            {
+                "key": "field_ed_aloj_checkin",
+                "label": "Hora de Check-in",
+                "name": "aloj_checkin",
+                "type": "text"
+            },
+            {
+                "key": "field_ed_aloj_checkout",
+                "label": "Hora de Check-out",
+                "name": "aloj_checkout",
+                "type": "text"
+            },
+            {
+                "key": "field_ed_aloj_accesibilidad",
+                "label": "Accesibilidad",
+                "name": "aloj_accesibilidad",
+                "type": "true_false",
+                "ui": 1
+            }
+        ],
+        "location": [
+            [
+                {
+                    "param": "post_type",
+                    "operator": "==",
+                    "value": "proveedor"
+                },
+                {
+                    "param": "post_taxonomy",
+                    "operator": "==",
+                    "value": "categoria_servicio:alojamiento"
+                }
+            ]
+        ],
+        "menu_order": 110,
+        "position": "normal",
+        "style": "default",
+        "label_placement": "top",
+        "instruction_placement": "label",
+        "active": true
+    }
+]

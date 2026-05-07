@@ -1,0 +1,1822 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Eclipse Sevilla — Directorio de Proveedores de Eventos</title>
+<meta name="description" content="Los mejores proveedores para tu evento en Sevilla. Una selección curada de profesionales que harán de tu celebración una experiencia inolvidable.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<style>
+/* ═══════════════════════════════════════════
+   ECLIPSE SEVILLA — DESIGN SYSTEM
+   ═══════════════════════════════════════════ */
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --gold: #C8A96E;
+  --gold-light: #D4BA85;
+  --gold-dark: #B8964F;
+  --gold-glow: rgba(200, 169, 110, 0.15);
+  --charcoal: #1A1A2E;
+  --charcoal-deep: #12121F;
+  --charcoal-light: #252540;
+  --text-primary: #2D2D2D;
+  --text-secondary: #6B6B6B;
+  --text-tertiary: #999999;
+  --bg-white: #FFFFFF;
+  --bg-warm: #F8F7F5;
+  --bg-warm-alt: #F3F1ED;
+  --border-light: #E8E6E1;
+  --shadow-sm: 0 2px 8px rgba(26, 26, 46, 0.06);
+  --shadow-md: 0 8px 30px rgba(26, 26, 46, 0.08);
+  --shadow-lg: 0 20px 60px rgba(26, 26, 46, 0.12);
+  --shadow-hover: 0 16px 48px rgba(26, 26, 46, 0.14);
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --ease-out: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  --ease-smooth: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  color: var(--text-primary);
+  background: var(--bg-white);
+  line-height: 1.7;
+  overflow-x: hidden;
+}
+
+/* ═══════════════════════════════════════════
+   UTILITY
+   ═══════════════════════════════════════════ */
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.section-label {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 16px;
+  display: block;
+}
+
+.section-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(28px, 4vw, 42px);
+  font-weight: 500;
+  color: var(--text-primary);
+  line-height: 1.2;
+  margin-bottom: 18px;
+}
+
+.section-subtitle {
+  font-size: 16px;
+  color: var(--text-secondary);
+  max-width: 560px;
+  line-height: 1.7;
+  font-weight: 300;
+}
+
+/* Art Deco divider */
+.deco-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin: 20px 0 0;
+}
+
+.deco-divider span {
+  display: block;
+  height: 1px;
+  width: 40px;
+  background: var(--gold);
+  opacity: 0.5;
+}
+
+.deco-divider i {
+  color: var(--gold);
+  font-size: 6px;
+  opacity: 0.6;
+}
+
+/* Reveal animation */
+.reveal {
+  opacity: 0;
+  transform: translateY(32px);
+  transition: opacity 0.8s var(--ease-out), transform 0.8s var(--ease-out);
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-delay-1 { transition-delay: 0.1s; }
+.reveal-delay-2 { transition-delay: 0.2s; }
+.reveal-delay-3 { transition-delay: 0.3s; }
+.reveal-delay-4 { transition-delay: 0.4s; }
+.reveal-delay-5 { transition-delay: 0.5s; }
+
+/* ═══════════════════════════════════════════
+   HEADER
+   ═══════════════════════════════════════════ */
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: var(--charcoal);
+  transition: background 0.4s var(--ease-smooth), box-shadow 0.4s var(--ease-smooth);
+}
+
+.header.scrolled {
+  background: rgba(26, 26, 46, 0.97);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 72px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+}
+
+.logo-icon {
+  width: 32px;
+  height: 32px;
+  border: 1.5px solid var(--gold);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.logo-icon::after {
+  content: '';
+  width: 8px;
+  height: 8px;
+  background: var(--gold);
+  border-radius: 50%;
+}
+
+.logo-text {
+  font-family: 'Playfair Display', serif;
+  font-size: 20px;
+  font-weight: 500;
+  color: var(--bg-white);
+  letter-spacing: 1px;
+}
+
+.logo-text em {
+  font-style: italic;
+  color: var(--gold);
+  font-weight: 400;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 36px;
+}
+
+.nav a {
+  font-size: 13px;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.7);
+  text-decoration: none;
+  letter-spacing: 0.5px;
+  transition: color 0.3s var(--ease-smooth);
+  position: relative;
+}
+
+.nav a::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: var(--gold);
+  transition: width 0.3s var(--ease-smooth);
+}
+
+.nav a:hover {
+  color: var(--bg-white);
+}
+
+.nav a:hover::after {
+  width: 100%;
+}
+
+.nav-cta {
+  font-size: 12px !important;
+  font-weight: 500 !important;
+  color: var(--charcoal) !important;
+  background: var(--gold);
+  padding: 10px 24px;
+  border-radius: var(--radius-sm);
+  letter-spacing: 1px !important;
+  text-transform: uppercase;
+  transition: background 0.3s var(--ease-smooth), transform 0.2s var(--ease-smooth) !important;
+}
+
+.nav-cta::after {
+  display: none !important;
+}
+
+.nav-cta:hover {
+  background: var(--gold-light) !important;
+  color: var(--charcoal) !important;
+  transform: translateY(-1px);
+}
+
+/* Hamburger */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  padding: 8px;
+  background: none;
+  border: none;
+  z-index: 1001;
+}
+
+.hamburger span {
+  display: block;
+  width: 22px;
+  height: 1.5px;
+  background: var(--bg-white);
+  transition: transform 0.3s var(--ease-smooth), opacity 0.3s var(--ease-smooth);
+}
+
+.hamburger.active span:nth-child(1) {
+  transform: translateY(6.5px) rotate(45deg);
+}
+
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+  transform: translateY(-6.5px) rotate(-45deg);
+}
+
+/* Mobile nav */
+.mobile-nav {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--charcoal-deep);
+  z-index: 999;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 32px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s var(--ease-smooth);
+}
+
+.mobile-nav.open {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.mobile-nav a {
+  font-family: 'Playfair Display', serif;
+  font-size: 28px;
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.mobile-nav a:hover {
+  color: var(--gold);
+}
+
+.mobile-nav .nav-cta-mobile {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--charcoal);
+  background: var(--gold);
+  padding: 14px 36px;
+  border-radius: var(--radius-sm);
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  margin-top: 16px;
+}
+
+/* ═══════════════════════════════════════════
+   HERO
+   ═══════════════════════════════════════════ */
+
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at 30% 20%, rgba(200, 169, 110, 0.12) 0%, transparent 50%),
+    radial-gradient(ellipse at 70% 80%, rgba(200, 169, 110, 0.08) 0%, transparent 50%),
+    linear-gradient(165deg, #1A1A2E 0%, #2A1F3D 25%, #3D2A3A 45%, #4A3028 60%, #3D2A1A 75%, #1A1A2E 100%);
+}
+
+/* Subtle grain texture overlay */
+.hero-bg::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  opacity: 0.03;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size: 128px 128px;
+}
+
+/* Warm light leak */
+.hero-bg::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 40%;
+  background: linear-gradient(to top, rgba(26, 26, 46, 0.6), transparent);
+}
+
+/* Decorative geometric elements */
+.hero-deco {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.hero-deco::before {
+  content: '';
+  position: absolute;
+  top: 15%;
+  right: 8%;
+  width: 180px;
+  height: 180px;
+  border: 1px solid rgba(200, 169, 110, 0.08);
+  border-radius: 50%;
+  animation: float-gentle 12s ease-in-out infinite;
+}
+
+.hero-deco::after {
+  content: '';
+  position: absolute;
+  bottom: 25%;
+  left: 5%;
+  width: 120px;
+  height: 120px;
+  border: 1px solid rgba(200, 169, 110, 0.06);
+  transform: rotate(45deg);
+  animation: float-gentle 15s ease-in-out infinite reverse;
+}
+
+@keyframes float-gentle {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-12px) rotate(3deg); }
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  padding: 120px 24px 80px;
+  max-width: 820px;
+}
+
+.hero-content .section-label {
+  color: var(--gold);
+  margin-bottom: 28px;
+  opacity: 0;
+  animation: fadeUp 0.8s var(--ease-out) 0.3s forwards;
+}
+
+.hero h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(32px, 5.5vw, 56px);
+  font-weight: 500;
+  color: var(--bg-white);
+  line-height: 1.15;
+  margin-bottom: 24px;
+  opacity: 0;
+  animation: fadeUp 0.8s var(--ease-out) 0.5s forwards;
+}
+
+.hero h1 em {
+  font-style: italic;
+  color: var(--gold);
+}
+
+.hero p {
+  font-size: clamp(15px, 2vw, 18px);
+  color: rgba(255, 255, 255, 0.6);
+  max-width: 540px;
+  margin: 0 auto 48px;
+  line-height: 1.7;
+  font-weight: 300;
+  opacity: 0;
+  animation: fadeUp 0.8s var(--ease-out) 0.7s forwards;
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Search bar */
+.search-bar {
+  background: var(--bg-white);
+  border-radius: var(--radius-lg);
+  padding: 8px;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.25);
+  opacity: 0;
+  animation: fadeUp 0.8s var(--ease-out) 0.9s forwards;
+  max-width: 720px;
+  margin: 0 auto;
+  transition: box-shadow 0.3s var(--ease-smooth);
+}
+
+.search-bar:focus-within {
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.3), 0 0 0 2px var(--gold-glow);
+}
+
+.search-field {
+  flex: 1;
+  padding: 14px 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  position: relative;
+}
+
+.search-field:not(:last-of-type)::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 25%;
+  height: 50%;
+  width: 1px;
+  background: var(--border-light);
+}
+
+.search-field i {
+  color: var(--text-tertiary);
+  font-size: 14px;
+  flex-shrink: 0;
+}
+
+.search-field input,
+.search-field select {
+  border: none;
+  outline: none;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 14px;
+  color: var(--text-primary);
+  background: transparent;
+  width: 100%;
+  cursor: pointer;
+}
+
+.search-field input::placeholder {
+  color: var(--text-tertiary);
+}
+
+.search-field select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  color: var(--text-tertiary);
+}
+
+.search-btn {
+  background: var(--gold);
+  color: var(--charcoal);
+  border: none;
+  padding: 14px 28px;
+  border-radius: var(--radius-md);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  transition: background 0.3s var(--ease-smooth), transform 0.2s var(--ease-smooth);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.search-btn:hover {
+  background: var(--gold-light);
+  transform: translateY(-1px);
+}
+
+/* Scroll indicator */
+.scroll-indicator {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+  opacity: 0;
+  animation: fadeUp 0.8s var(--ease-out) 1.4s forwards;
+}
+
+.scroll-indicator span {
+  display: block;
+  width: 1px;
+  height: 48px;
+  background: linear-gradient(to bottom, var(--gold), transparent);
+  margin: 0 auto;
+  animation: scroll-pulse 2s ease-in-out infinite;
+}
+
+@keyframes scroll-pulse {
+  0%, 100% { opacity: 0.4; transform: scaleY(1); }
+  50% { opacity: 0.8; transform: scaleY(1.15); }
+}
+
+/* ═══════════════════════════════════════════
+   CATEGORIES
+   ═══════════════════════════════════════════ */
+
+.categories {
+  padding: 120px 0;
+}
+
+.categories-header {
+  text-align: center;
+  margin-bottom: 64px;
+}
+
+.categories-header .section-subtitle {
+  margin: 0 auto;
+}
+
+.categories-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.category-card {
+  position: relative;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  cursor: pointer;
+  aspect-ratio: 4 / 3;
+  text-decoration: none;
+  display: block;
+}
+
+.category-card-bg {
+  position: absolute;
+  inset: 0;
+  transition: transform 0.6s var(--ease-smooth);
+}
+
+.category-card:hover .category-card-bg {
+  transform: scale(1.06);
+}
+
+.category-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(26, 26, 46, 0.75) 0%, rgba(26, 26, 46, 0.2) 50%, rgba(26, 26, 46, 0.1) 100%);
+  transition: opacity 0.4s var(--ease-smooth);
+}
+
+.category-card:hover::after {
+  opacity: 0.7;
+}
+
+/* Category placeholder backgrounds */
+.cat-espacios .category-card-bg {
+  background: linear-gradient(135deg, #4A3628 0%, #6B4F3A 40%, #8B6F52 70%, #A08060 100%);
+}
+.cat-catering .category-card-bg {
+  background: linear-gradient(135deg, #3D2B28 0%, #6B3A30 40%, #8B4A38 70%, #A06048 100%);
+}
+.cat-foto .category-card-bg {
+  background: linear-gradient(135deg, #2B2D3D 0%, #3A406B 40%, #4A508B 70%, #5A60A0 100%);
+}
+.cat-musica .category-card-bg {
+  background: linear-gradient(135deg, #2E2838 0%, #4A3660 40%, #6B4888 70%, #8060A0 100%);
+}
+.cat-ambientacion .category-card-bg {
+  background: linear-gradient(135deg, #283D2E 0%, #3A6B40 40%, #4A8B50 70%, #60A068 100%);
+}
+.cat-belleza .category-card-bg {
+  background: linear-gradient(135deg, #3D2838 0%, #6B3660 40%, #8B4880 70%, #A060A0 100%);
+}
+
+.category-card-content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 28px;
+  z-index: 2;
+}
+
+.category-card h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 22px;
+  font-weight: 500;
+  color: var(--bg-white);
+  margin-bottom: 6px;
+}
+
+.category-card .count {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.6);
+  font-weight: 300;
+}
+
+.categories-footer {
+  text-align: center;
+  margin-top: 48px;
+}
+
+.link-arrow {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--gold);
+  text-decoration: none;
+  letter-spacing: 0.5px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: gap 0.3s var(--ease-smooth), color 0.3s;
+}
+
+.link-arrow:hover {
+  gap: 14px;
+  color: var(--gold-dark);
+}
+
+.link-arrow i {
+  font-size: 12px;
+  transition: transform 0.3s var(--ease-smooth);
+}
+
+.link-arrow:hover i {
+  transform: translateX(2px);
+}
+
+/* ═══════════════════════════════════════════
+   FEATURED PROVIDERS
+   ═══════════════════════════════════════════ */
+
+.featured {
+  padding: 120px 0;
+  background: var(--bg-warm);
+}
+
+.featured-header {
+  text-align: center;
+  margin-bottom: 64px;
+}
+
+.featured-header .section-subtitle {
+  margin: 0 auto;
+}
+
+.featured-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+
+.provider-card {
+  background: var(--bg-white);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.4s var(--ease-smooth), box-shadow 0.4s var(--ease-smooth);
+}
+
+.provider-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-hover);
+}
+
+.provider-card-img {
+  height: 240px;
+  position: relative;
+  overflow: hidden;
+}
+
+.provider-card-img-bg {
+  position: absolute;
+  inset: 0;
+  transition: transform 0.6s var(--ease-smooth);
+}
+
+.provider-card:hover .provider-card-img-bg {
+  transform: scale(1.04);
+}
+
+/* Provider photo placeholders */
+.prov-1 .provider-card-img-bg {
+  background: linear-gradient(145deg, #5A4A3A 0%, #8B7060 40%, #B09070 70%, #C8A080 100%);
+}
+.prov-2 .provider-card-img-bg {
+  background: linear-gradient(145deg, #4A3A2A 0%, #7B6050 40%, #9A7860 70%, #B89070 100%);
+}
+.prov-3 .provider-card-img-bg {
+  background: linear-gradient(145deg, #3A3A4A 0%, #606080 40%, #7070A0 70%, #8888B8 100%);
+}
+
+.provider-badge {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  background: var(--gold);
+  color: var(--charcoal);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  padding: 6px 14px;
+  border-radius: 2px;
+  z-index: 2;
+}
+
+.provider-card-body {
+  padding: 28px;
+}
+
+.provider-card h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 20px;
+  font-weight: 500;
+  color: var(--text-primary);
+  margin-bottom: 8px;
+}
+
+.provider-meta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: var(--text-secondary);
+  margin-bottom: 12px;
+}
+
+.provider-meta .dot {
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: var(--text-tertiary);
+}
+
+.provider-stars {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  margin-bottom: 14px;
+}
+
+.provider-stars i {
+  color: var(--gold);
+  font-size: 12px;
+}
+
+.provider-stars span {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-left: 6px;
+}
+
+.provider-card p {
+  font-size: 14px;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-bottom: 24px;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.btn-outline {
+  display: inline-block;
+  padding: 11px 28px;
+  border: 1.5px solid var(--border-light);
+  border-radius: var(--radius-sm);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-primary);
+  text-decoration: none;
+  letter-spacing: 0.5px;
+  transition: border-color 0.3s var(--ease-smooth), color 0.3s var(--ease-smooth), background 0.3s var(--ease-smooth);
+}
+
+.btn-outline:hover {
+  border-color: var(--gold);
+  color: var(--gold-dark);
+  background: var(--gold-glow);
+}
+
+.featured-footer {
+  text-align: center;
+  margin-top: 56px;
+}
+
+/* ═══════════════════════════════════════════
+   WHY ECLIPSE
+   ═══════════════════════════════════════════ */
+
+.why-section {
+  padding: 120px 0;
+}
+
+.why-header {
+  text-align: center;
+  margin-bottom: 80px;
+}
+
+.why-header .section-subtitle {
+  margin: 0 auto;
+}
+
+.why-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+}
+
+.why-item {
+  text-align: center;
+  padding: 48px 40px;
+  position: relative;
+}
+
+.why-item:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 20%;
+  height: 60%;
+  width: 1px;
+  background: var(--border-light);
+}
+
+.why-icon {
+  width: 52px;
+  height: 52px;
+  margin: 0 auto 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--gold);
+  border-radius: 50%;
+  color: var(--gold);
+  font-size: 18px;
+  opacity: 0.8;
+}
+
+.why-item h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 20px;
+  font-weight: 500;
+  color: var(--text-primary);
+  margin-bottom: 14px;
+}
+
+.why-item p {
+  font-size: 14px;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  max-width: 280px;
+  margin: 0 auto;
+  font-weight: 300;
+}
+
+/* ═══════════════════════════════════════════
+   CTA SECTION
+   ═══════════════════════════════════════════ */
+
+.cta-section {
+  position: relative;
+  padding: 120px 0;
+  overflow: hidden;
+}
+
+.cta-bg {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at 20% 50%, rgba(200, 169, 110, 0.1) 0%, transparent 60%),
+    radial-gradient(ellipse at 80% 50%, rgba(200, 169, 110, 0.06) 0%, transparent 60%),
+    linear-gradient(135deg, #1A1A2E 0%, #2A2040 30%, #3D2A32 60%, #2A1F20 100%);
+}
+
+.cta-bg::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  opacity: 0.025;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size: 128px 128px;
+}
+
+.cta-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+.cta-content .section-title {
+  color: var(--bg-white);
+  margin-bottom: 20px;
+}
+
+.cta-content p {
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.55);
+  line-height: 1.7;
+  margin-bottom: 44px;
+  font-weight: 300;
+}
+
+.btn-gold {
+  display: inline-block;
+  padding: 16px 40px;
+  background: var(--gold);
+  color: var(--charcoal);
+  border: none;
+  border-radius: var(--radius-sm);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background 0.3s var(--ease-smooth), transform 0.3s var(--ease-smooth), box-shadow 0.3s var(--ease-smooth);
+}
+
+.btn-gold:hover {
+  background: var(--gold-light);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 40px rgba(200, 169, 110, 0.3);
+}
+
+/* ═══════════════════════════════════════════
+   FOOTER
+   ═══════════════════════════════════════════ */
+
+.footer {
+  background: var(--charcoal-deep);
+  padding: 80px 0 0;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr 1fr;
+  gap: 48px;
+  padding-bottom: 64px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.footer-brand .logo {
+  margin-bottom: 20px;
+}
+
+.footer-brand p {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.4);
+  line-height: 1.7;
+  margin-bottom: 24px;
+  max-width: 280px;
+  font-weight: 300;
+}
+
+.footer-social {
+  display: flex;
+  gap: 16px;
+}
+
+.footer-social a {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255, 255, 255, 0.4);
+  font-size: 14px;
+  text-decoration: none;
+  transition: border-color 0.3s, color 0.3s, background 0.3s;
+}
+
+.footer-social a:hover {
+  border-color: var(--gold);
+  color: var(--gold);
+  background: rgba(200, 169, 110, 0.08);
+}
+
+.footer-col h4 {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.5);
+  margin-bottom: 24px;
+}
+
+.footer-col ul {
+  list-style: none;
+}
+
+.footer-col ul li {
+  margin-bottom: 12px;
+}
+
+.footer-col ul a {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.35);
+  text-decoration: none;
+  transition: color 0.3s;
+  font-weight: 300;
+}
+
+.footer-col ul a:hover {
+  color: var(--gold);
+}
+
+.footer-col .contact-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+
+.footer-col .contact-item i {
+  color: var(--gold);
+  font-size: 13px;
+  margin-top: 3px;
+  opacity: 0.6;
+}
+
+.footer-col .contact-item span {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.35);
+  font-weight: 300;
+  line-height: 1.5;
+}
+
+.footer-bottom {
+  padding: 24px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.footer-bottom p {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.25);
+  font-weight: 300;
+}
+
+.footer-legal {
+  display: flex;
+  gap: 24px;
+}
+
+.footer-legal a {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.25);
+  text-decoration: none;
+  transition: color 0.3s;
+  font-weight: 300;
+}
+
+.footer-legal a:hover {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+/* ═══════════════════════════════════════════
+   RESPONSIVE — TABLET
+   ═══════════════════════════════════════════ */
+
+@media (max-width: 1024px) {
+  .categories-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .featured-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .featured-grid .provider-card:last-child {
+    grid-column: 1 / -1;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+
+  .why-grid {
+    gap: 0;
+  }
+
+  .why-item {
+    padding: 40px 28px;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 0 20px;
+  }
+
+  .nav {
+    display: none;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .mobile-nav {
+    display: flex;
+  }
+
+  .header-inner {
+    height: 64px;
+  }
+
+  /* Hero */
+  .hero {
+    min-height: 100svh;
+  }
+
+  .hero-content {
+    padding: 100px 20px 60px;
+  }
+
+  .hero-deco::before,
+  .hero-deco::after {
+    display: none;
+  }
+
+  .search-bar {
+    flex-direction: column;
+    padding: 6px;
+    border-radius: var(--radius-md);
+  }
+
+  .search-field {
+    width: 100%;
+    padding: 14px 16px;
+  }
+
+  .search-field:not(:last-of-type)::after {
+    right: 10%;
+    left: 10%;
+    width: 80%;
+    height: 1px;
+    top: auto;
+    bottom: 0;
+  }
+
+  .search-btn {
+    width: 100%;
+    padding: 16px;
+    border-radius: var(--radius-md);
+    font-size: 14px;
+    margin-top: 4px;
+  }
+
+  /* Categories */
+  .categories {
+    padding: 80px 0;
+  }
+
+  .categories-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+
+  .category-card {
+    aspect-ratio: 3 / 2.5;
+  }
+
+  .category-card-content {
+    padding: 20px;
+  }
+
+  .category-card h3 {
+    font-size: 18px;
+  }
+
+  /* Featured */
+  .featured {
+    padding: 80px 0;
+  }
+
+  .featured-grid {
+    grid-template-columns: 1fr;
+    max-width: 440px;
+    margin: 0 auto;
+  }
+
+  .featured-grid .provider-card:last-child {
+    max-width: none;
+  }
+
+  /* Why */
+  .why-section {
+    padding: 80px 0;
+  }
+
+  .why-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .why-item::after {
+    display: none !important;
+  }
+
+  .why-item {
+    padding: 36px 20px;
+    border-bottom: 1px solid var(--border-light);
+  }
+
+  .why-item:last-child {
+    border-bottom: none;
+  }
+
+  /* CTA */
+  .cta-section {
+    padding: 80px 0;
+  }
+
+  /* Footer */
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero h1 {
+    font-size: 28px;
+  }
+
+  .categories-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .category-card {
+    aspect-ratio: 16 / 9;
+  }
+
+  .section-title {
+    font-size: 26px;
+  }
+
+  .btn-gold {
+    padding: 16px 32px;
+    width: 100%;
+    text-align: center;
+  }
+}
+</style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════
+     HEADER
+     ═══════════════════════════════════════════ -->
+
+<header class="header" id="header">
+  <div class="container header-inner">
+    <a href="#" class="logo">
+      <div class="logo-icon"></div>
+      <span class="logo-text">Eclipse <em>Sevilla</em></span>
+    </a>
+    <nav class="nav">
+      <a href="#">Inicio</a>
+      <a href="#categorias">Directorio</a>
+      <a href="#categorias">Categor&iacute;as</a>
+      <a href="#">Blog</a>
+      <a href="#contacto">Contacto</a>
+      <a href="#" class="nav-cta">An&uacute;nciate</a>
+    </nav>
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+</header>
+
+<div class="mobile-nav" id="mobileNav">
+  <a href="#" onclick="closeMobile()">Inicio</a>
+  <a href="#categorias" onclick="closeMobile()">Directorio</a>
+  <a href="#categorias" onclick="closeMobile()">Categor&iacute;as</a>
+  <a href="#" onclick="closeMobile()">Blog</a>
+  <a href="#contacto" onclick="closeMobile()">Contacto</a>
+  <a href="#" class="nav-cta-mobile" onclick="closeMobile()">An&uacute;nciate</a>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     HERO
+     ═══════════════════════════════════════════ -->
+
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-deco"></div>
+  <div class="hero-content">
+    <span class="section-label">Directorio de eventos</span>
+    <h1>Los mejores proveedores para tu evento en <em>Sevilla</em></h1>
+    <p>Una selecci&oacute;n curada de profesionales que har&aacute;n de tu celebraci&oacute;n una experiencia inolvidable</p>
+    <form class="search-bar" onsubmit="return false;">
+      <div class="search-field">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <input type="text" placeholder="&iquest;Qu&eacute; buscas?">
+      </div>
+      <div class="search-field">
+        <i class="fa-solid fa-layer-group"></i>
+        <select>
+          <option value="" disabled selected>Categor&iacute;a</option>
+          <option>Espacios</option>
+          <option>Catering</option>
+          <option>Fotograf&iacute;a y V&iacute;deo</option>
+          <option>M&uacute;sica y Animaci&oacute;n</option>
+          <option>Ambientaci&oacute;n</option>
+          <option>Belleza</option>
+        </select>
+      </div>
+      <div class="search-field">
+        <i class="fa-solid fa-location-dot"></i>
+        <select>
+          <option value="" disabled selected>Zona</option>
+          <option>Centro</option>
+          <option>Triana</option>
+          <option>Nervi&oacute;n</option>
+          <option>Macarena</option>
+          <option>Los Remedios</option>
+          <option>Aljarafe</option>
+        </select>
+      </div>
+      <button type="submit" class="search-btn">Buscar</button>
+    </form>
+  </div>
+  <div class="scroll-indicator">
+    <span></span>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     CATEGORIES
+     ═══════════════════════════════════════════ -->
+
+<section class="categories" id="categorias">
+  <div class="container">
+    <div class="categories-header reveal">
+      <span class="section-label">Categor&iacute;as</span>
+      <h2 class="section-title">Explora por categor&iacute;a</h2>
+      <p class="section-subtitle">Encuentra el proveedor perfecto para cada detalle de tu evento</p>
+      <div class="deco-divider">
+        <span></span>
+        <i class="fa-solid fa-diamond"></i>
+        <span></span>
+      </div>
+    </div>
+    <div class="categories-grid">
+      <a href="#" class="category-card cat-espacios reveal reveal-delay-1">
+        <div class="category-card-bg"></div>
+        <div class="category-card-content">
+          <h3>Espacios</h3>
+          <span class="count">24 proveedores</span>
+        </div>
+      </a>
+      <a href="#" class="category-card cat-catering reveal reveal-delay-2">
+        <div class="category-card-bg"></div>
+        <div class="category-card-content">
+          <h3>Catering</h3>
+          <span class="count">18 proveedores</span>
+        </div>
+      </a>
+      <a href="#" class="category-card cat-foto reveal reveal-delay-3">
+        <div class="category-card-bg"></div>
+        <div class="category-card-content">
+          <h3>Fotograf&iacute;a y V&iacute;deo</h3>
+          <span class="count">31 proveedores</span>
+        </div>
+      </a>
+      <a href="#" class="category-card cat-musica reveal reveal-delay-1">
+        <div class="category-card-bg"></div>
+        <div class="category-card-content">
+          <h3>M&uacute;sica y Animaci&oacute;n</h3>
+          <span class="count">22 proveedores</span>
+        </div>
+      </a>
+      <a href="#" class="category-card cat-ambientacion reveal reveal-delay-2">
+        <div class="category-card-bg"></div>
+        <div class="category-card-content">
+          <h3>Ambientaci&oacute;n</h3>
+          <span class="count">15 proveedores</span>
+        </div>
+      </a>
+      <a href="#" class="category-card cat-belleza reveal reveal-delay-3">
+        <div class="category-card-bg"></div>
+        <div class="category-card-content">
+          <h3>Belleza</h3>
+          <span class="count">20 proveedores</span>
+        </div>
+      </a>
+    </div>
+    <div class="categories-footer reveal">
+      <a href="#" class="link-arrow">Ver todas las categor&iacute;as <i class="fa-solid fa-arrow-right"></i></a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     FEATURED PROVIDERS
+     ═══════════════════════════════════════════ -->
+
+<section class="featured" id="proveedores">
+  <div class="container">
+    <div class="featured-header reveal">
+      <span class="section-label">Destacados</span>
+      <h2 class="section-title">Proveedores recomendados</h2>
+      <p class="section-subtitle">Seleccionados por Eclipse Sevilla por su calidad y profesionalidad</p>
+      <div class="deco-divider">
+        <span></span>
+        <i class="fa-solid fa-diamond"></i>
+        <span></span>
+      </div>
+    </div>
+    <div class="featured-grid">
+
+      <div class="provider-card prov-1 reveal reveal-delay-1">
+        <div class="provider-card-img">
+          <div class="provider-card-img-bg"></div>
+          <span class="provider-badge">Recomendado</span>
+        </div>
+        <div class="provider-card-body">
+          <h3>Hacienda Los Olivos</h3>
+          <div class="provider-meta">
+            <span>Espacios</span>
+            <span class="dot"></span>
+            <span>Aljarafe, Sevilla</span>
+          </div>
+          <div class="provider-stars">
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <span>5.0</span>
+          </div>
+          <p>Finca exclusiva con jardines andaluces, capilla privada y capacidad para 300 invitados en un entorno &uacute;nico.</p>
+          <a href="#" class="btn-outline">Ver perfil</a>
+        </div>
+      </div>
+
+      <div class="provider-card prov-2 reveal reveal-delay-2">
+        <div class="provider-card-img">
+          <div class="provider-card-img-bg"></div>
+          <span class="provider-badge">Recomendado</span>
+        </div>
+        <div class="provider-card-body">
+          <h3>Sabores del Sur Catering</h3>
+          <div class="provider-meta">
+            <span>Catering</span>
+            <span class="dot"></span>
+            <span>Centro, Sevilla</span>
+          </div>
+          <div class="provider-stars">
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star-half-stroke"></i>
+            <span>4.9</span>
+          </div>
+          <p>Gastronom&iacute;a andaluza de autor con productos de temporada y presentaciones que enamoran a tus invitados.</p>
+          <a href="#" class="btn-outline">Ver perfil</a>
+        </div>
+      </div>
+
+      <div class="provider-card prov-3 reveal reveal-delay-3">
+        <div class="provider-card-img">
+          <div class="provider-card-img-bg"></div>
+          <span class="provider-badge">Recomendado</span>
+        </div>
+        <div class="provider-card-body">
+          <h3>Luz &amp; Momento Studio</h3>
+          <div class="provider-meta">
+            <span>Fotograf&iacute;a</span>
+            <span class="dot"></span>
+            <span>Triana, Sevilla</span>
+          </div>
+          <div class="provider-stars">
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <span>4.8</span>
+          </div>
+          <p>Fotograf&iacute;a y v&iacute;deo cinematogr&aacute;fico para bodas y eventos. Estilo editorial, natural y emotivo.</p>
+          <a href="#" class="btn-outline">Ver perfil</a>
+        </div>
+      </div>
+
+    </div>
+    <div class="featured-footer reveal">
+      <a href="#" class="link-arrow">Ver todos los proveedores <i class="fa-solid fa-arrow-right"></i></a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     WHY ECLIPSE
+     ═══════════════════════════════════════════ -->
+
+<section class="why-section">
+  <div class="container">
+    <div class="why-header reveal">
+      <span class="section-label">Nuestra promesa</span>
+      <h2 class="section-title">&iquest;Por qu&eacute; Eclipse Sevilla?</h2>
+      <p class="section-subtitle">Porque tu evento merece lo mejor, y nosotros te ayudamos a encontrarlo</p>
+      <div class="deco-divider">
+        <span></span>
+        <i class="fa-solid fa-diamond"></i>
+        <span></span>
+      </div>
+    </div>
+    <div class="why-grid">
+      <div class="why-item reveal reveal-delay-1">
+        <div class="why-icon">
+          <i class="fa-solid fa-gem"></i>
+        </div>
+        <h3>Selecci&oacute;n curada</h3>
+        <p>Solo los mejores proveedores forman parte de nuestro directorio. Cada uno ha sido evaluado por su excelencia.</p>
+      </div>
+      <div class="why-item reveal reveal-delay-2">
+        <div class="why-icon">
+          <i class="fa-solid fa-shield-halved"></i>
+        </div>
+        <h3>Confianza verificada</h3>
+        <p>Cada proveedor es revisado y verificado por nuestro equipo. Trabajamos solo con profesionales de confianza.</p>
+      </div>
+      <div class="why-item reveal reveal-delay-3">
+        <div class="why-icon">
+          <i class="fa-solid fa-heart"></i>
+        </div>
+        <h3>Atenci&oacute;n personalizada</h3>
+        <p>Te ayudamos a encontrar el proveedor perfecto para tu evento. Estamos contigo en cada paso.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     CTA SECTION
+     ═══════════════════════════════════════════ -->
+
+<section class="cta-section">
+  <div class="cta-bg"></div>
+  <div class="container">
+    <div class="cta-content reveal">
+      <span class="section-label">Para proveedores</span>
+      <h2 class="section-title">&iquest;Eres proveedor de eventos en Sevilla?</h2>
+      <p>&Uacute;nete a la selecci&oacute;n de profesionales recomendados por Eclipse Sevilla y conecta con clientes que buscan calidad</p>
+      <a href="#" class="btn-gold">Quiero aparecer en el directorio</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     FOOTER
+     ═══════════════════════════════════════════ -->
+
+<footer class="footer" id="contacto">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="#" class="logo">
+          <div class="logo-icon"></div>
+          <span class="logo-text">Eclipse <em>Sevilla</em></span>
+        </a>
+        <p>El directorio de referencia para proveedores de eventos en Sevilla. Calidad, confianza y profesionalidad en cada recomendaci&oacute;n.</p>
+        <div class="footer-social">
+          <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+          <a href="#" aria-label="Pinterest"><i class="fa-brands fa-pinterest-p"></i></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Categor&iacute;as</h4>
+        <ul>
+          <li><a href="#">Espacios</a></li>
+          <li><a href="#">Catering</a></li>
+          <li><a href="#">Fotograf&iacute;a y V&iacute;deo</a></li>
+          <li><a href="#">M&uacute;sica y Animaci&oacute;n</a></li>
+          <li><a href="#">Ambientaci&oacute;n</a></li>
+          <li><a href="#">Belleza</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Para proveedores</h4>
+        <ul>
+          <li><a href="#">An&uacute;nciate</a></li>
+          <li><a href="#">Planes y precios</a></li>
+          <li><a href="#">Preguntas frecuentes</a></li>
+          <li><a href="#">Contacto</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contacto</h4>
+        <div class="contact-item">
+          <i class="fa-solid fa-envelope"></i>
+          <span>hola@eclipsesevilla.com</span>
+        </div>
+        <div class="contact-item">
+          <i class="fa-solid fa-phone"></i>
+          <span>+34 654 123 456</span>
+        </div>
+        <div class="contact-item">
+          <i class="fa-solid fa-location-dot"></i>
+          <span>Sevilla, Espa&ntilde;a</span>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Eclipse Sevilla. Todos los derechos reservados.</p>
+      <div class="footer-legal">
+        <a href="#">Aviso legal</a>
+        <a href="#">Privacidad</a>
+        <a href="#">Cookies</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- ═══════════════════════════════════════════
+     JAVASCRIPT
+     ═══════════════════════════════════════════ -->
+
+<script>
+(function() {
+  'use strict';
+
+  // ── Header scroll effect ──
+  const header = document.getElementById('header');
+  let lastScroll = 0;
+
+  function onScroll() {
+    const scrollY = window.scrollY;
+    if (scrollY > 40) {
+      header.classList.add('scrolled');
+    } else {
+      header.classList.remove('scrolled');
+    }
+    lastScroll = scrollY;
+  }
+
+  window.addEventListener('scroll', onScroll, { passive: true });
+
+  // ── Mobile menu ──
+  const hamburger = document.getElementById('hamburger');
+  const mobileNav = document.getElementById('mobileNav');
+
+  hamburger.addEventListener('click', function() {
+    this.classList.toggle('active');
+    mobileNav.classList.toggle('open');
+    document.body.style.overflow = mobileNav.classList.contains('open') ? 'hidden' : '';
+  });
+
+  window.closeMobile = function() {
+    hamburger.classList.remove('active');
+    mobileNav.classList.remove('open');
+    document.body.style.overflow = '';
+  };
+
+  // ── Scroll reveal ──
+  const reveals = document.querySelectorAll('.reveal');
+
+  const revealObserver = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  }, {
+    threshold: 0.15,
+    rootMargin: '0px 0px -40px 0px'
+  });
+
+  reveals.forEach(function(el) {
+    revealObserver.observe(el);
+  });
+
+  // ── Smooth scroll for anchor links ──
+  document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
+    anchor.addEventListener('click', function(e) {
+      var targetId = this.getAttribute('href');
+      if (targetId === '#') return;
+      var target = document.querySelector(targetId);
+      if (target) {
+        e.preventDefault();
+        var offset = 80;
+        var top = target.getBoundingClientRect().top + window.scrollY - offset;
+        window.scrollTo({ top: top, behavior: 'smooth' });
+      }
+    });
+  });
+
+  // ── Parallax on hero decorative elements ──
+  var heroDeco = document.querySelector('.hero-deco');
+  if (heroDeco && window.innerWidth > 768) {
+    window.addEventListener('scroll', function() {
+      var scrollY = window.scrollY;
+      if (scrollY < window.innerHeight) {
+        heroDeco.style.transform = 'translateY(' + (scrollY * 0.15) + 'px)';
+      }
+    }, { passive: true });
+  }
+
+})();
+</script>
+
+</body>
+</html>
